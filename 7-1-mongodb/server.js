@@ -195,7 +195,12 @@ const url = "mongodb+srv://s202344670_db_user:DbUserPass%4071@cluster0.mrqfbmm.m
   })
   .catch((err) => console.log("❌ Error:", err));
 // define schema
-
+const studentSchema = new mongoose.Schema({
+         name: String,
+         age: Number,
+         major: String
+      });
+      const Student = mongoose.model("Student", studentSchema);
 
 // create document
 
