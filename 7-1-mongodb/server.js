@@ -185,10 +185,15 @@
  */
 
 // import mongoose
-
+import mongoose from "mongoose";
 // establish connection
-
-
+const url = "mongodb+srv://s202344670_db_user:DbUserPass%4071@cluster0.mrqfbmm.mongodb.net/TestDB?dnsResultOrder=ipv4first";mongoose.connect(url)
+  mongoose.connect(url)
+  .then(() => {
+    console.log("✅ Connected to MongoDB");
+    runLab();
+  })
+  .catch((err) => console.log("❌ Error:", err));
 // define schema
 
 
