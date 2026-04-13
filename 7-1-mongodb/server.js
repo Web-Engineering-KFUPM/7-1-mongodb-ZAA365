@@ -183,13 +183,15 @@
  *    User → users
  *  This is the default behavior of Mongoose.
  */
-
+import dns from 'node:dns';
+dns.setDefaultResultOrder('ipv4first');
 // import mongoose
 import mongoose from "mongoose";
 // establish connection
-mongoose.connect("mongodb+srv://s202344670_db_user:DbUserPass%4071@cluster.mongodb.net")
+mongoose.connect("mongodb://s202344670_db_user:DbUserPass%4071@ac-dbpynzh-shard-00-00.mrqfbmm.mongodb.net:27017,ac-dbpynzh-shard-00-01.mrqfbmm.mongodb.net:27017,ac-dbpynzh-shard-00-02.mrqfbmm.mongodb.net:27017/?ssl=true&replicaSet=atlas-i4oh8b-shard-0&authSource=admin&appName=Cluster0")
 .then(() => console.log("Connected"))
 .catch(err => console.log(err));
+
 // define schema
 const studentSchema = new mongoose.Schema({
          name: String,
